@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./layui/css/layui.css" rel="stylesheet">
+  <title>Fourth_floor</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <script src="./js/demo_6.js"></script>
+
+</head>
+
+<body>
+  <!-- 平面图 -->
+  <div class="small-all" id="myall">
+    <img src="./image/fourth/bg.jpg" class="bgimage" id="floor" />
+    <!-- 加载边框元素 -->
+    <script src="./js/borderlist.js"></script>  
+  </div>
+  <!-- 房间号表格数据 -->
+  <table class="layui-hide" id="listRoom" lay-filter="listRoom"></table>
+  <script type="text/html" id="listRoomDemo">
+    <div class="layui-clear-space">
+      <a class="layui-btn layui-bg-orange layui-btn-xs" lay-event="choose">Move</a>
+    </div>
+  </script>
+  <!-- 房间表格数据 -->
+  <div id="roomDiv">
+    <form class="layui-form">
+      <div class="demo-reg-container">
+        <div class="layui-form-item">
+          <div class="layui-row">
+            <div class="layui-col-xs9">
+              <label class="layui-form-label">Principal Investigator</label>
+              <input type="hidden" name="roomName" id="roomName" />
+              <div class="layui-input-block">
+                <input type="text" name="owner" id="owner" lay-verify="required" placeholder="Please enter PI's name" lay-reqtext="Please enter PI's name" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-col-xs3">
+              <div style="margin-left: 11px;">
+                <button  type="submit" lay-submit lay-filter="owner-save" class="layui-btn layui-btn-normal layui-btn-radius" >Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <table class="layui-hide" id="roomInfo" lay-filter="roomInfo"></table>
+  </div>
+  <script type="text/html" id="roomInfoDemo">
+    <div class="layui-clear-space">
+      <a class="layui-btn layui-btn-xs" lay-event="move">Move</a>
+      <a class="layui-btn layui-btn-xs" lay-event="add">Add</a>
+      <a class="layui-btn layui-btn-xs" lay-event="edit">Edit</a>
+      <a class="layui-btn layui-bg-red layui-btn-xs" lay-event="del">Delete</a>
+    </div>
+  </script>
+  <!-- 底部操作按钮 -->
+  <div class="layui-btn-group layui-btn-group-fixed">
+    <button type="button" class="layui-btn" id="screenfull">Full_screen<i
+        class="layui-icon layui-icon-screen-full layui-font-14"></i></button>
+    <button type="button" class="layui-btn" id="screenrestore">Exit_full_screen<i
+        class="layui-icon layui-icon-screen-restore layui-font-14"></i></button>
+    <button type="button" class="layui-btn layui-bg-blue" onclick="jumpFloor('third_floor.html')">Third_floor<i
+        class="layui-icon layui-icon-location layui-font-14"></i></button>
+    <button type="button" class="layui-btn layui-bg-blue" onclick="jumpFloor('fifth_floor.html')">Fifth_floor<i
+        class="layui-icon layui-icon-location layui-font-14"></i></button>
+  </div>
+  <script src="./layui/layui.js"></script>
+  <script src="./js/common.js"></script>
+</body>
+
+</html>
